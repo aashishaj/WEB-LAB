@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <style>
+            p{
+                position:absolute;
+                left:50%;
+                top:50%;
+                transform:translate(-50%, -50%);
+            }
+        </style>
+    </head>
+    <body>
+        <p id='txt'>    </p>
+        <script>
+            window.onload=init;
+            function init(){
+                var inc = [5, -5]
+                var color = ['color:red;', 'color:blue;']
+                var texts = ['TEXT GROWING', 'TEXT SHRINKING']
+                var sz = 5;
+                var index = 0;
+                var txt = document.getElementById("txt");
+            
+                function foo()
+                {    
+                    if(sz > 50)
+                        index = 1;
+                    if (sz < 10)
+                        index = 0;
+                    sz += inc[index];
+                    txt.innerHTML = texts[index];
+                    txt.setAttribute('style', 'font-size:'+sz+'px;'+color[index])
+                    console.log(index);    
+                }
+                setInterval(foo, 200);
+            }
+        </script>
+    </body>
+</html>

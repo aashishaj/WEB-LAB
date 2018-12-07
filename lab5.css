@@ -1,0 +1,13 @@
+
+usn{
+	display: block;margin-left: 10px;color: navy;font-size: 24;
+}
+name{
+	display: block;margin-left: 20px;color: red;font-size: 20;
+}
+branch{
+	display: block;margin-left: 20px;color:green;font-size: 20;
+}
+year{
+	display: block;margin-left: 20px;color: black;font-size: 20;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		p{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+	</style>
+</head>
+<body>
+	<p id='d'></p>
+	<script type="text/javascript">
+		var it = setInterval(inTimer,100);
+		var fs = 5,ids = document.getElementById('d');
+		function inTimer(){
+			ids.innerHTML='growing';
+			ids.setAttribute('style','font-size:'+fs+'px;color:red')
+			fs+=5;
+			if(fs>=50)
+			{
+				clearInterval(it);
+				dt=setInterval(deTimer,100);
+			}
+		}
+		function deTimer(){
+			fs-=5;
+			ids.innerHTML='shrinking';
+			ids.setAttribute('style','font-size:'+fs+'px;color:blue');
+			if(fs===5)
+			{
+				clearInterval(dt);
+				it=setInterval(inTimer,100);
+			}
+
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		table,td,th
+		{
+			width: 33%;
+			border : 1px solid black;
+			text-align: center;
+			border-collapse: collapse;
+			background-color: DarkGray;
+		}
+		table { margin: auto; }
+		input {text-align: right;}
+	</style>
+	<script type="text/javascript">
+		function cal(cid){
+		var val1 = parseFloat(document.getElementById('v1').value);
+		var val2 = parseFloat(document.getElementById('v2').value);
+				
+		if(isNaN(val1)||isNaN(val2))
+			alert("please enter legit values");
+		else if(cid=='a')
+				document.getElementById('res').value=val1+val2;
+		else if(cid=='b')
+				document.getElementById('res').value=val1-val2;
+		else if(cid=='c')
+				document.getElementById('res').value=val1*val2;
+		else if(cid=='d')
+				document.getElementById('res').value=val1/val2;
+		}
+		function cls(){
+			document.getElementById('v1').value="";
+			document.getElementById('v2').value="";
+			document.getElementById('res').value="";
+		}
+	</script>
+</head>
+<body>
+	<table>
+		<tr><th colspan="4">Simple Calculator</th></tr>
+		<tr>
+			<td colspan="2">Value 1 :<input type="text" id = "v1" value=""></td>
+			<td colspan="2">Value 2 :<input type="text" id = "v2" value=""></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="Addition" id = 'a' onclick="cal(this.id)"></td>
+			<td><input type="button" value="Subtraction" id = 'b' onclick="cal(this.id)"></td>
+			<td><input type="button" value="Multiplication" id = 'c' onclick="cal(this.id)"></td>
+			<td><input type="button" value="Division" id = 'd' onclick="cal(this.id)"></td>
+		</tr>
+		<tr>
+			<td colspan="2">Result :<input type="text" id = "res" value="" disabled></td>
+			<td colspan="2"><input type="button" value="CLS" onclick="cls()"></td>
+		</tr>
+	</table>
+</body>
+</html>
